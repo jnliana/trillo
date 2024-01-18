@@ -1,0 +1,40 @@
+.card {
+  background: #eee;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.header-card {
+  display: flex;
+  flex-direction: wrap;
+}
+
+.header-card span {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  background: green;
+  border-radius: 9px;
+  color: white;
+}
+
+.header-body {
+}
+
+.header-footer {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-between;
+}
+
+.header-footer span {
+  background: red;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+
+span.header-footer-person {
+  text-transform: uppercase;
+  border-radius: 2.5rem;
+  display: flex;
+  align-items: center;
+}

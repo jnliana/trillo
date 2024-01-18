@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Establecer un tamaño de fuente base y un color para el texto */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Hacer que las imágenes sean 100% responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Eliminar los estilos de viñetas por defecto de las listas */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Establecer márgenes y rellenos para los elementos principales */
+header,
+main,
+section,
+article,
+aside,
+footer {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Establecer márgenes para los elementos en línea */
+a,
+span,
+strong,
+em {
+  margin: 0;
+  padding: 0;
+}
+
+/* Establecer márgenes y rellenos para formularios y sus elementos */
+form,
+input,
+textarea,
+button,
+select {
+  margin: 0;
+  padding: 0;
+}
+
+/* Establecer bordes y márgenes para las imágenes dentro de enlaces */
+a img {
+  border: none;
+}
+
+/* Establecer estilos básicos para enlaces */
+a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+a:hover {
+  text-decoration: underline;
+}
