@@ -1,23 +1,15 @@
 import "./Card.css";
-type TCard = {
-  id: number;
-  labels: string[];
-  name: string;
-  number: number;
-  assigned: string;
-};
-
-type TCardProps = {
-  card: TCard;
-};
+import { TCardProps } from "./Card.type";
 
 export const Card = ({ card }: TCardProps) => {
   const { labels, name, number, assigned } = card;
   return (
     <div className="card">
       <div className="header-card">
-        {labels.map((label, index) => (
-          <span key={index}>{label}</span>
+        {labels.map((label) => (
+          <span key={label.id}>
+            {label.id}-{label.label}
+          </span>
         ))}
       </div>
       <div className="header-body">

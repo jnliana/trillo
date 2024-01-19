@@ -7,6 +7,7 @@
 .header-card {
   display: flex;
   flex-direction: wrap;
+  gap: 0.5rem;
 }
 
 .header-card span {
@@ -18,6 +19,7 @@
 }
 
 .header-body {
+  padding: 1rem 0;
 }
 
 .header-footer {
@@ -27,7 +29,6 @@
 }
 
 .header-footer span {
-  background: red;
   font-size: 0.8rem;
   padding: 0.5rem;
 }
@@ -37,4 +38,5 @@ span.header-footer-person {
   border-radius: 2.5rem;
   display: flex;
   align-items: center;
+  background: lightblue;
 }

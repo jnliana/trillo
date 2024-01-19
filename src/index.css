@@ -45,11 +45,7 @@ em {
 }
 
 /* Establecer márgenes y rellenos para formularios y sus elementos */
-form,
-input,
-textarea,
-button,
-select {
+form {
   margin: 0;
   padding: 0;
 }

@@ -1,8 +1,28 @@
 .column {
-  background: lightyellow;
-  border-radius: 1rem;
-  padding: 2rem;
+  /*  background: lightyellow;
+ */
+  height: 90%;
+}
+
+.column-header {
+  position: sticky;
+  top: 0;
+  background: lightsalmon;
+  padding: 1rem;
+  z-index: 100;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: Capitalize;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.column-body {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  overflow: auto;
+  padding: 1rem;
+  background: gray;
 }

@@ -1,74 +1,54 @@
-export const mocksCard = {
-  data: [
+import { TBoards, TCard } from "../components/Card/Card.type";
+
+const getRandomNumber = () => Math.floor(Math.random() * (1 - 1000 + 1)) + 1;
+
+const generateRandomDataPending = (): TCard => ({
+  id: getRandomNumber(),
+  labels: [
+    { id: `label-${getRandomNumber()}`, label: "SomeLabel1" },
+    { id: `label-${getRandomNumber()}`, label: "SomeLabel2" },
+  ],
+  name: "Una frase con más de 30 caracteres para el objeto",
+  number: Math.floor(Math.random() * 100),
+  assigned: "Nombre de una persona",
+  column: "Pending",
+});
+const generateRandomDataDoing = (): TCard => ({
+  id: getRandomNumber(),
+  labels: [
+    { id: `label-${getRandomNumber()}`, label: "SomeLabel1" },
+    { id: `label-${getRandomNumber()}`, label: "SomeLabel2" },
+  ],
+  name: "Una frase con más de 30 caracteres para el objeto",
+  number: Math.floor(Math.random() * 100),
+  assigned: "Nombre de una persona",
+  column: "Doing",
+});
+const generateRandomDataDone = (): TCard => ({
+  id: getRandomNumber(),
+  labels: [
+    { id: `label-${getRandomNumber()}`, label: "SomeLabel1" },
+    { id: `label-${getRandomNumber()}`, label: "SomeLabel2" },
+  ],
+  name: "Una frase con más de 30 caracteres para el objeto",
+  number: Math.floor(Math.random() * 100),
+  assigned: "Nombre de una persona",
+  column: "Done",
+});
+
+export const mocksCard: TBoards = {
+  boards: [
     {
-      id: 290,
-      labels: ["A", "B", "C"],
-      name: "Objeto 1",
-      number: 1234,
-      assigned: "Persona 1",
-    },
-    {
-      id: 2087,
-      labels: ["X", "Y", "Z"],
-      name: "Objeto 2",
-      number: 5678,
-      assigned: "Persona 2",
-    },
-    {
-      id: 2,
-      labels: ["P", "Q", "R"],
-      name: "Objeto 3",
-      number: 9012,
-      assigned: "Persona 3",
-    },
-    {
-      id: 2876,
-      labels: ["M", "N", "O"],
-      name: "Objeto 4",
-      number: 3456,
-      assigned: "Persona 4",
-    },
-    {
-      id: 277,
-      labels: ["D", "E", "F"],
-      name: "Objeto 5",
-      number: 7890,
-      assigned: "Persona 5",
-    },
-    {
-      id: 255,
-      labels: ["G", "H", "I"],
-      name: "Objeto 6",
-      number: 1234,
-      assigned: "Persona 6",
-    },
-    {
-      id: 222,
-      labels: ["S", "T", "U"],
-      name: "Objeto 7",
-      number: 5678,
-      assigned: "Persona 7",
-    },
-    {
-      id: 42,
-      labels: ["J", "K", "L"],
-      name: "Objeto 8",
-      number: 9012,
-      assigned: "Persona 8",
-    },
-    {
-      id: 25,
-      labels: ["V", "W", "X"],
-      name: "Objeto 9",
-      number: 3456,
-      assigned: "Persona 9",
-    },
-    {
-      id: 24,
-      labels: ["1", "2", "3"],
-      name: "Objeto 10",
-      number: 7890,
-      assigned: "Persona 10",
+      name: "My tablero uno",
+      data: [
+        generateRandomDataDone(),
+        generateRandomDataPending(),
+        generateRandomDataDoing(),
+        generateRandomDataDoing(),
+        generateRandomDataDone(),
+        generateRandomDataPending(),
+        generateRandomDataDoing(),
+      ],
     },
   ],
 };
