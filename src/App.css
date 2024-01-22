@@ -26,11 +26,11 @@ form {
 input,
 select {
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 button {
-  padding: 1rem;
+  padding: 0.5rem;
 }
