@@ -19,6 +19,7 @@ export type TCardProps = {
 };
 
 export type TBoard = {
+  id: number;
   name: string;
   data: TCard[];
 };

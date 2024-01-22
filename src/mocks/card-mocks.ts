@@ -39,6 +39,7 @@ const generateRandomDataDone = (): TCard => ({
 export const mocksCard: TBoards = {
   boards: [
     {
+      id: 1,
       name: "My tablero uno",
       data: [
         generateRandomDataDone(),

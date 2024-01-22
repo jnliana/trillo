@@ -16,9 +16,12 @@ export const Board = () => {
     }, []);
   }, []);
 
-  const getCards = (type: ColumnType) => {
-    return cards.filter((card) => card.column === type);
-  };
+  const getCardsByColumnType = useCallback(
+    (type: ColumnType) => {
+      return cards.filter((card) => card.column === type);
+    },
+    [cards]
+  );
 
   const columns = getColumns(cards);
   const title = mocksCard.boards[0].name;
@@ -29,8 +32,9 @@ export const Board = () => {
       <div className="container">
         {columns.map((column) => (
           <Column
+            key={column}
             title={column}
-            cards={getCards(column)}
+            cards={getCardsByColumnType(column)}
           />
         ))}
         <CardForm />

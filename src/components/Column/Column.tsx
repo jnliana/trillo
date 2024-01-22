@@ -11,7 +11,10 @@ export const Column = ({ title, cards }: TColumnProps) => (
     <div className="column-header">{title}</div>
     <div className="column-body">
       {cards.map((item) => (
-        <Card card={item} />
+        <Card
+          key={item.id}
+          card={item}
+        />
       ))}
     </div>
     <div className="column-footer"></div>

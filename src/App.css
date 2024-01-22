@@ -34,3 +34,7 @@ select {
 button {
   padding: 0.5rem;
 }
+
+input.error {
+  border: 1px solid red;
+}
