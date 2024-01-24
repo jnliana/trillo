@@ -1,3 +1,5 @@
+import { TBoardCard } from "../../context/Board/BoardContext.type";
+
 export type ColumnType = "Pending" | "Doing" | "Done";
 
 export type TLabel = {
@@ -17,4 +19,5 @@ export type TCard = {
 
 export type TCardProps = {
   card: TCard;
+  removeCard: (data: TBoardCard) => void;
 };

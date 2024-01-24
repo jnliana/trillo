@@ -1,10 +1,20 @@
 import "./Card.css";
 import { TCardProps } from "./Card.type";
 
-export const Card = ({ card }: TCardProps) => {
+export const Card = ({ card, removeCard }: TCardProps) => {
   const { labels, name, number, assigned } = card;
   return (
     <div className="card">
+      <button
+        onClick={() =>
+          removeCard({
+            id: 1,
+            card: card,
+          })
+        }
+      >
+        x
+      </button>
       <div className="header-card">
         {labels?.map((label) => (
           <span key={label.id}>

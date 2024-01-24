@@ -8,15 +8,28 @@ export function BoardReducer(state: TBoards, action: BoardAction) {
   const boardIndex = state.boards.findIndex((board) => board.id === payload.id);
   const existsBoard = boardIndex !== -1;
 
+  const board = state.boards[boardIndex];
+
   const addCard = () => {
     if (existsBoard) {
-      const totalCard = state.boards[boardIndex].data.length;
+      const totalCard = board.data.length;
       const newCard = { ...payload.card, number: totalCard + 1, id: uuidv4() };
       return produce(state, (draft) => {
         draft.boards[boardIndex].data.push(newCard);
       });
     }
-    // No existe el tablero
+    return state;
+  };
+
+  const removeCard = () => {
+    if (existsBoard) {
+      const getCardIndex = board.data.findIndex(
+        (card) => card.id === payload.card.id
+      );
+      return produce(state, (draft) => {
+        draft.boards[boardIndex].data.splice(getCardIndex, 1);
+      });
+    }
     return state;
   };
 
@@ -24,10 +37,9 @@ export function BoardReducer(state: TBoards, action: BoardAction) {
     case "add":
       return addCard();
     case "remove":
-      return state;
+      return removeCard();
 
     default:
       return state;
   }
-  return state;
 }
