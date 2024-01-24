@@ -10,20 +10,11 @@ export type TCard = {
   labels: TLabel[];
   name: string;
   number: number;
+  description: string;
   assigned: string;
   column: ColumnType;
 };
 
 export type TCardProps = {
   card: TCard;
-};
-
-export type TBoard = {
-  id: number;
-  name: string;
-  data: TCard[];
-};
-
-export type TBoards = {
-  boards: TBoard[];
 };

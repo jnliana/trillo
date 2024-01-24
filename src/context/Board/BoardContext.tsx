@@ -3,10 +3,18 @@ import {
   TBoardContextProps,
   TBoardContextProviderProps,
 } from "./BoardContext.type";
+import { useBoardReducer } from "./reducer/useBoardReducer";
+import { Outlet } from "react-router-dom";
 
 export const BoardContext = createContext({} as TBoardContextProps);
 export const BoardContextProvider = ({
   children,
-}: TBoardContextProviderProps) => (
-  <BoardContext.Provider value={{}}>{children}</BoardContext.Provider>
-);
+}: TBoardContextProviderProps) => {
+  const { boardsData, addCard, removeCard } = useBoardReducer();
+  return (
+    <BoardContext.Provider value={{ boardsData, addCard, removeCard }}>
+      {children}
+      <Outlet />
+    </BoardContext.Provider>
+  );
+};

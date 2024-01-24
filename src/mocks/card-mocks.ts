@@ -1,4 +1,6 @@
-import { TBoards, TCard } from "../components/Card/Card.type";
+import { TCard } from "../components/Card/Card.type";
+import { faker } from "@faker-js/faker";
+import { TBoards } from "../context/Board/BoardContext.type";
 
 const getRandomNumber = () => Math.floor(Math.random() * (1 - 1000 + 1)) + 1;
 
@@ -8,31 +10,36 @@ const generateRandomDataPending = (): TCard => ({
     { id: `label-${getRandomNumber()}`, label: "SomeLabel1" },
     { id: `label-${getRandomNumber()}`, label: "SomeLabel2" },
   ],
-  name: "Una frase con más de 30 caracteres para el objeto",
+  name: faker.person.jobTitle(),
   number: Math.floor(Math.random() * 100),
-  assigned: "Nombre de una persona",
+  description: faker.lorem.lines({ min: 1, max: 3 }),
+  assigned: faker.person.fullName(),
   column: "Pending",
 });
+
 const generateRandomDataDoing = (): TCard => ({
   id: getRandomNumber(),
   labels: [
     { id: `label-${getRandomNumber()}`, label: "SomeLabel1" },
     { id: `label-${getRandomNumber()}`, label: "SomeLabel2" },
   ],
-  name: "Una frase con más de 30 caracteres para el objeto",
+  name: faker.person.jobTitle(),
   number: Math.floor(Math.random() * 100),
-  assigned: "Nombre de una persona",
+  description: faker.lorem.lines({ min: 1, max: 3 }),
+  assigned: faker.person.fullName(),
   column: "Doing",
 });
+
 const generateRandomDataDone = (): TCard => ({
   id: getRandomNumber(),
   labels: [
     { id: `label-${getRandomNumber()}`, label: "SomeLabel1" },
     { id: `label-${getRandomNumber()}`, label: "SomeLabel2" },
   ],
-  name: "Una frase con más de 30 caracteres para el objeto",
+  name: faker.person.jobTitle(),
   number: Math.floor(Math.random() * 100),
-  assigned: "Nombre de una persona",
+  description: faker.lorem.lines({ min: 1, max: 3 }),
+  assigned: faker.person.fullName(),
   column: "Done",
 });
 

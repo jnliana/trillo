@@ -1,24 +1,25 @@
-import { useRef } from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { ColumnType } from "../Card/Card.type";
+import { useBoard } from "../../hooks/useBoard";
 
 type TForm = {
   name: string;
-  number: number | undefined;
+  description: string;
   assigned: string;
   column: ColumnType | string;
 };
 
 export const CardForm = () => {
+  const { getPeople } = useBoard();
   const {
     control,
     reset,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<TForm>({
     defaultValues: {
       name: "",
-      number: 0,
+      description: "",
       assigned: "",
       column: "",
     },
@@ -28,7 +29,24 @@ export const CardForm = () => {
     console.log("ex", e.target.value);
   };
 
-  const onSubmit: SubmitHandler<TForm> = (data) => console.log(data);
+  const getSelectOptions = getPeople(1);
+
+  const onSubmit: SubmitHandler<TForm> = (data) => {
+    /*   addCard({
+      id: 1,
+      card: {
+        id: 122312,
+        labels: [],
+        name: "prubea",
+        number: 1234,
+        description: "s",
+        assigned: "pepe",
+        column: "Done",
+      },
+    }); */
+    console.log(data);
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Controller
@@ -49,13 +67,13 @@ export const CardForm = () => {
       />
       {errors.name && <p className="error-message">Please enter a name</p>}
       <Controller
-        name="number"
+        name="description"
         control={control}
         rules={{}}
         render={({ field }) => (
           <input
             {...field}
-            placeholder="number"
+            placeholder="description"
           />
         )}
       />
@@ -64,16 +82,31 @@ export const CardForm = () => {
         control={control}
         rules={{ required: true }}
         render={({ field, fieldState: { error } }) => (
-          <input
+          <select
             {...field}
             className={error ? "error" : ""}
-            placeholder="assigned"
-          />
+          >
+            <option
+              value=""
+              style={{ display: "none" }}
+            >
+              Seleccionar persona
+            </option>
+            {getSelectOptions?.map((option) => (
+              <option
+                key={option}
+                value={option}
+              >
+                {option}
+              </option>
+            ))}
+          </select>
         )}
       />
       {errors.assigned && (
         <p className="error-message">Please enter a assigned</p>
       )}
+
       <Controller
         name="column"
         control={control}
@@ -86,14 +119,24 @@ export const CardForm = () => {
               example(e);
             }}
           >
-            <option value="">Seleccionar opción</option>
+            <option
+              value=""
+              style={{ display: "none" }}
+            >
+              Seleccionar opción
+            </option>
             <option value="Pending">Pending</option>
             <option value="Doing">Doing</option>
             <option value="Done">Done</option>
           </select>
         )}
       />
-      <button type="submit">Guardar</button>
+      <button
+        type="submit"
+        disabled={!isValid}
+      >
+        Guardar
+      </button>
       <button
         type="button"
         onClick={() => reset()}

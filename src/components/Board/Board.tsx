@@ -3,9 +3,12 @@ import { mocksCard } from "../../mocks/card-mocks";
 import { ColumnType, TCard } from "../Card/Card.type";
 import { CardForm } from "../CardForm";
 import { Column } from "../Column";
+import { useBoard } from "../../hooks/useBoard";
 
 export const Board = () => {
-  const { data: cards } = mocksCard.boards[0];
+  const { boardsData } = useBoard();
+
+  const { data: cards } = boardsData.boards[0];
 
   const getColumns = useCallback((cards: TCard[]) => {
     return cards.reduce((columns: ColumnType[], card) => {
