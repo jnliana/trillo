@@ -10,7 +10,7 @@ type TForm = {
 };
 
 export const CardForm = () => {
-  const { getPeople } = useBoard();
+  const { getPeople, addCard } = useBoard();
   const {
     control,
     reset,
@@ -32,19 +32,18 @@ export const CardForm = () => {
   const getSelectOptions = getPeople(1);
 
   const onSubmit: SubmitHandler<TForm> = (data) => {
-    /*   addCard({
+    addCard({
       id: 1,
       card: {
         id: 122312,
         labels: [],
-        name: "prubea",
+        name: data.name,
         number: 1234,
-        description: "s",
-        assigned: "pepe",
-        column: "Done",
+        description: data.description,
+        assigned: data.assigned,
+        column: data.column as ColumnType,
       },
-    }); */
-    console.log(data);
+    });
   };
 
   return (

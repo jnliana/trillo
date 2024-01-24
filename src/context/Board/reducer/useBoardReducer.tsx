@@ -10,7 +10,7 @@ function BoardReducer(state: TBoards, action: BoardAction) {
 
   switch (type) {
     case "add":
-      console.log("llamadron add");
+      console.log("llamadron add", payload);
       return state;
     case "remove":
       return state;
