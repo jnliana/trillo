@@ -17,7 +17,7 @@ export type TBoardContextProviderProps = {
 
 export type TBoardCard = {
   id: number;
-  card?: TCard;
+  card: TCard;
 };
 
 export type TBoardContextProps = {

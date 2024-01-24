@@ -1,11 +1,13 @@
 import { TCard } from "../components/Card/Card.type";
 import { faker } from "@faker-js/faker";
 import { TBoards } from "../context/Board/BoardContext.type";
+import { v4 as uuidv4 } from "uuid";
 
-const getRandomNumber = () => Math.floor(Math.random() * (1 - 1000 + 1)) + 1;
+const getRandomNumber = () =>
+  Math.abs(Math.floor(Math.random() * (1 - 1000 + 1)) + 1);
 
 const generateRandomDataPending = (): TCard => ({
-  id: getRandomNumber(),
+  id: uuidv4(),
   labels: [
     { id: `label-${getRandomNumber()}`, label: "SomeLabel1" },
     { id: `label-${getRandomNumber()}`, label: "SomeLabel2" },
@@ -18,7 +20,7 @@ const generateRandomDataPending = (): TCard => ({
 });
 
 const generateRandomDataDoing = (): TCard => ({
-  id: getRandomNumber(),
+  id: uuidv4(),
   labels: [
     { id: `label-${getRandomNumber()}`, label: "SomeLabel1" },
     { id: `label-${getRandomNumber()}`, label: "SomeLabel2" },
@@ -31,7 +33,7 @@ const generateRandomDataDoing = (): TCard => ({
 });
 
 const generateRandomDataDone = (): TCard => ({
-  id: getRandomNumber(),
+  id: uuidv4(),
   labels: [
     { id: `label-${getRandomNumber()}`, label: "SomeLabel1" },
     { id: `label-${getRandomNumber()}`, label: "SomeLabel2" },

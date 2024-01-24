@@ -1,29 +1,13 @@
 import { useCallback, useReducer } from "react";
-import { BoardAction, TBoardCard, TBoards } from "../BoardContext.type";
+import { TBoardCard, TBoards } from "../BoardContext.type";
 import { mocksCard } from "../../../mocks/card-mocks";
+import { BoardReducer } from "./boardReducer";
 
 const INITIAL_STATE: TBoards = mocksCard;
 //const INITIAL_STATE: TBoards = { boards: [] };
 
-function BoardReducer(state: TBoards, action: BoardAction) {
-  const { type, payload } = action;
-
-  switch (type) {
-    case "add":
-      console.log("llamadron add", payload);
-      return state;
-    case "remove":
-      return state;
-
-    default:
-      return state;
-  }
-  return state;
-}
-
 export const useBoardReducer = () => {
   const [state, dispath] = useReducer(BoardReducer, INITIAL_STATE);
-  console.log("state", state);
   const addCard = useCallback(
     (cardData: TBoardCard) =>
       dispath({

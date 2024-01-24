@@ -6,13 +6,13 @@ export type TLabel = {
 };
 
 export type TCard = {
-  id: number;
-  labels: TLabel[];
+  id: string;
   name: string;
   number: number;
   description: string;
   assigned: string;
   column: ColumnType;
+  labels?: TLabel[];
 };
 
 export type TCardProps = {

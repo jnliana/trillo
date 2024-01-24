@@ -25,25 +25,21 @@ export const CardForm = () => {
     },
   });
 
-  const example = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log("ex", e.target.value);
-  };
-
   const getSelectOptions = getPeople(1);
 
   const onSubmit: SubmitHandler<TForm> = (data) => {
     addCard({
       id: 1,
       card: {
-        id: 122312,
-        labels: [],
+        id: "",
         name: data.name,
-        number: 1234,
+        number: 0,
         description: data.description,
         assigned: data.assigned,
         column: data.column as ColumnType,
       },
     });
+    reset();
   };
 
   return (
@@ -111,13 +107,7 @@ export const CardForm = () => {
         control={control}
         rules={{ required: true }}
         render={({ field }) => (
-          <select
-            {...field}
-            onChange={(e) => {
-              field.onChange(e);
-              example(e);
-            }}
-          >
+          <select {...field}>
             <option
               value=""
               style={{ display: "none" }}

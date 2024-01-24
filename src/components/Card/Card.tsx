@@ -6,7 +6,7 @@ export const Card = ({ card }: TCardProps) => {
   return (
     <div className="card">
       <div className="header-card">
-        {labels.map((label) => (
+        {labels?.map((label) => (
           <span key={label.id}>
             {label.id}-{label.label}
           </span>
