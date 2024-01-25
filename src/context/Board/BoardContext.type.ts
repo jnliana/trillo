@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { TCard } from "../../components/Card/Card.type";
+import { ReactNode } from 'react';
+import { TCard } from '../../components/Card/Card.type';
 
 export type TBoard = {
   id: number;
@@ -26,7 +26,7 @@ export type TBoardContextProps = {
   removeCard: (Card: TBoardCard) => void;
 };
 
-export type Actions = "add" | "remove";
+export type Actions = 'add' | 'remove';
 
 export type BoardAction = {
   type: Actions;

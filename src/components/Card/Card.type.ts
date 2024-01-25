@@ -1,6 +1,6 @@
-import { TBoardCard } from "../../context/Board/BoardContext.type";
+import { TBoardCard } from '../../context/Board/BoardContext.type';
 
-export type ColumnType = "Pending" | "Doing" | "Done";
+export type ColumnType = 'Pending' | 'Doing' | 'Done';
 
 export type TLabel = {
   id: string;

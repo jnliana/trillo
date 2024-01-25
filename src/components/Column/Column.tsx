@@ -1,7 +1,7 @@
-import "./Column.css";
-import { Card } from "../Card";
-import { TCard } from "../Card/Card.type";
-import { useBoard } from "../../hooks/useBoard";
+import './Column.css';
+import { Card } from '../Card';
+import { TCard } from '../Card/Card.type';
+import { useBoard } from '../../hooks/useBoard';
 
 type TColumnProps = {
   title: string;

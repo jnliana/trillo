@@ -1,10 +1,14 @@
-import "./App.css";
-import { Board } from "./components/Board/Board";
-import { BoardContextProvider } from "./context/Board/BoardContext";
+import './App.css';
+import { BoardContextProvider } from './context/Board/BoardContext';
+import { Navbar } from './components/Navbar';
+import { RouteDefinition } from './routes/routes';
 export const App = () => {
   return (
-    <BoardContextProvider>
-      <Board />
-    </BoardContextProvider>
+    <>
+      <Navbar />
+      <BoardContextProvider>
+        <RouteDefinition />
+      </BoardContextProvider>
+    </>
   );
 };

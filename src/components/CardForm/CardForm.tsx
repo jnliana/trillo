@@ -1,6 +1,6 @@
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { ColumnType } from "../Card/Card.type";
-import { useBoard } from "../../hooks/useBoard";
+import { useForm, Controller, SubmitHandler } from 'react-hook-form';
+import { ColumnType } from '../Card/Card.type';
+import { useBoard } from '../../hooks/useBoard';
 
 type TForm = {
   name: string;
@@ -18,10 +18,10 @@ export const CardForm = () => {
     formState: { errors, isValid },
   } = useForm<TForm>({
     defaultValues: {
-      name: "",
-      description: "",
-      assigned: "",
-      column: "",
+      name: '',
+      description: '',
+      assigned: '',
+      column: '',
     },
   });
 
@@ -31,7 +31,7 @@ export const CardForm = () => {
     addCard({
       id: 1,
       card: {
-        id: "",
+        id: '',
         name: data.name,
         number: 0,
         description: data.description,
@@ -55,7 +55,7 @@ export const CardForm = () => {
         }) => (
           <input
             {...field}
-            className={error ? "error" : ""}
+            className={error ? 'error' : ''}
             placeholder="name"
           />
         )}
@@ -79,11 +79,11 @@ export const CardForm = () => {
         render={({ field, fieldState: { error } }) => (
           <select
             {...field}
-            className={error ? "error" : ""}
+            className={error ? 'error' : ''}
           >
             <option
               value=""
-              style={{ display: "none" }}
+              style={{ display: 'none' }}
             >
               Seleccionar persona
             </option>
@@ -110,7 +110,7 @@ export const CardForm = () => {
           <select {...field}>
             <option
               value=""
-              style={{ display: "none" }}
+              style={{ display: 'none' }}
             >
               Seleccionar opción
             </option>

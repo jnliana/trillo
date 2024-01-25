@@ -1,14 +1,17 @@
-import { useCallback } from "react";
-import { mocksCard } from "../../mocks/card-mocks";
-import { ColumnType, TCard } from "../Card/Card.type";
-import { CardForm } from "../CardForm";
-import { Column } from "../Column";
-import { useBoard } from "../../hooks/useBoard";
+import { useCallback } from 'react';
+import { ColumnType, TCard } from '../Card/Card.type';
+import { CardForm } from '../CardForm';
+import { Column } from '../Column';
+import { useBoard } from '../../hooks/useBoard';
+import { useParams } from 'react-router-dom';
 
 export const Board = () => {
-  const { boardsData } = useBoard();
+  const { boardId } = useParams();
+  const { getBoard } = useBoard();
+  const boardsData = getBoard(Number(boardId));
+  if (!boardsData) return <h2>Tablero sin data</h2>;
 
-  const { data: cards } = boardsData.boards[0];
+  const { data: cards, name } = boardsData;
 
   const getColumns = useCallback((cards: TCard[]) => {
     return cards.reduce((columns: ColumnType[], card) => {
@@ -27,12 +30,11 @@ export const Board = () => {
   );
 
   const columns = getColumns(cards);
-  const title = mocksCard.boards[0].name;
 
   return (
-    <div className="board">
-      <h1>{title}</h1>
-      <div className="container">
+    <div className='board'>
+      <h1>{name}</h1>
+      <div className='container'>
         {columns.map((column) => (
           <Column
             key={column}

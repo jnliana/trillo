@@ -1,6 +1,6 @@
-import { produce } from "immer";
-import { BoardAction, TBoards } from "../BoardContext.type";
-import { v4 as uuidv4 } from "uuid";
+import { produce } from 'immer';
+import { BoardAction, TBoards } from '../BoardContext.type';
+import { v4 as uuidv4 } from 'uuid';
 
 export function BoardReducer(state: TBoards, action: BoardAction) {
   const { type, payload } = action;
@@ -34,12 +34,12 @@ export function BoardReducer(state: TBoards, action: BoardAction) {
   };
 
   switch (type) {
-    case "add":
-      return addCard();
-    case "remove":
-      return removeCard();
+  case 'add':
+    return addCard();
+  case 'remove':
+    return removeCard();
 
-    default:
-      return state;
+  default:
+    return state;
   }
 }
