@@ -17,16 +17,18 @@ export type TBoardContextProviderProps = {
 
 export type TBoardCard = {
   id: number;
-  card: TCard;
+  card?: TCard;
+  cards?: TCard[];
 };
 
 export type TBoardContextProps = {
   boardsData: TBoards;
   addCard: (Card: TBoardCard) => void;
   removeCard: (Card: TBoardCard) => void;
+  updateOrder: (Cards: TBoardCard) => void;
 };
 
-export type Actions = 'add' | 'remove';
+export type Actions = 'add' | 'remove' | 'updateOrder';
 
 export type BoardAction = {
   type: Actions;

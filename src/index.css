@@ -8,7 +8,6 @@
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
-  color: #333;
 }
 
 /* Hacer que las imágenes sean 100% responsivas */
@@ -24,7 +23,6 @@ ol {
 }
 
 /* Establecer márgenes y rellenos para los elementos principales */
-header,
 main,
 section,
 article,
@@ -58,7 +56,6 @@ a img {
 /* Establecer estilos básicos para enlaces */
 a {
   text-decoration: none;
-  color: #0077cc;
 }
 
 a:hover {

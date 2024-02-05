@@ -3,7 +3,8 @@ import { BoardContext } from '../../context/Board/BoardContext';
 import { TBoard } from '../../context/Board/BoardContext.type';
 
 export const useBoard = () => {
-  const { boardsData, addCard, removeCard } = useContext(BoardContext);
+  const { boardsData, addCard, removeCard, updateOrder } =
+    useContext(BoardContext);
 
   const getPeople = (idBoard: number) => {
     const cardboardInfo = boardsData.boards.find(
@@ -25,7 +26,6 @@ export const useBoard = () => {
   };
 
   const getBoard = (id: number) => {
-    console.log('id', id);
     return boardsData.boards.find((board) => board.id === id);
   };
 
@@ -33,6 +33,7 @@ export const useBoard = () => {
     boardsData,
     addCard,
     removeCard,
+    updateOrder,
     getPeople,
     getBoards,
     getBoard,

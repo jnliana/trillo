@@ -1,0 +1,25 @@
+header {
+  background: var(--main-bg-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+header a,
+header a:hover {
+  color: var(--main-txt-color);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  padding: 10px;
+}

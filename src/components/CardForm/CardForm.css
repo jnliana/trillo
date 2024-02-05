@@ -1,0 +1,33 @@
+.form-container {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--main-bg-color);
+  padding: 1.5rem;
+  z-index: 101;
+  border-radius: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input,
+select {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+button {
+  padding: 0.5rem;
+}
+
+input.error {
+  border: 1px solid red;
+}

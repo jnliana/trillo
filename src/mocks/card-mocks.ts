@@ -9,8 +9,8 @@ const getRandomNumber = () =>
 const generateRandomDataPending = (): TCard => ({
   id: uuidv4(),
   labels: [
-    { id: `label-${getRandomNumber()}`, label: 'SomeLabel1' },
-    { id: `label-${getRandomNumber()}`, label: 'SomeLabel2' },
+    { id: `label-${getRandomNumber()}`, label: `label-${getRandomNumber()}` },
+    { id: `label-${getRandomNumber()}`, label: `label-${getRandomNumber()}` },
   ],
   name: faker.person.jobTitle(),
   number: Math.floor(Math.random() * 100),
@@ -22,8 +22,7 @@ const generateRandomDataPending = (): TCard => ({
 const generateRandomDataDoing = (): TCard => ({
   id: uuidv4(),
   labels: [
-    { id: `label-${getRandomNumber()}`, label: 'SomeLabel1' },
-    { id: `label-${getRandomNumber()}`, label: 'SomeLabel2' },
+    { id: `label-${getRandomNumber()}`, label: `label-${getRandomNumber()}` },
   ],
   name: faker.person.jobTitle(),
   number: Math.floor(Math.random() * 100),
@@ -35,8 +34,8 @@ const generateRandomDataDoing = (): TCard => ({
 const generateRandomDataDone = (): TCard => ({
   id: uuidv4(),
   labels: [
-    { id: `label-${getRandomNumber()}`, label: 'SomeLabel1' },
-    { id: `label-${getRandomNumber()}`, label: 'SomeLabel2' },
+    { id: `label-${getRandomNumber()}`, label: `label-${getRandomNumber()}` },
+    { id: `label-${getRandomNumber()}`, label: `label-${getRandomNumber()}` },
   ],
   name: faker.person.jobTitle(),
   number: Math.floor(Math.random() * 100),
@@ -63,6 +62,33 @@ export const mocksCard: TBoards = {
     {
       id: 2,
       name: 'My tablero dos',
+      data: [
+        generateRandomDataDone(),
+        generateRandomDataPending(),
+        generateRandomDataDoing(),
+      ],
+    },
+    {
+      id: 3,
+      name: 'My tablero tres',
+      data: [
+        generateRandomDataDone(),
+        generateRandomDataPending(),
+        generateRandomDataDoing(),
+      ],
+    },
+    {
+      id: 4,
+      name: 'My tablero cuatro',
+      data: [
+        generateRandomDataDone(),
+        generateRandomDataPending(),
+        generateRandomDataDoing(),
+      ],
+    },
+    {
+      id: 5,
+      name: 'My tablero cinco',
       data: [
         generateRandomDataDone(),
         generateRandomDataPending(),

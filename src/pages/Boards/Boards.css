@@ -1,0 +1,24 @@
+.board-card {
+  background: var(--dark-blue);
+  width: 300px;
+  height: 200px;
+  padding: 1rem;
+}
+.board-card {
+  color: var(--main-txt-color);
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+}
+.board-wrapper {
+  padding: 3rem;
+}
+.board-wrapper h1 {
+  padding-bottom: 1rem;
+  color: var(--red-color);
+}
+.board-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}

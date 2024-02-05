@@ -22,9 +22,17 @@ export const useBoardReducer = () => {
     []
   );
 
+  const updateOrder = useCallback((cardData: TBoardCard) => {
+    dispath({
+      type: 'updateOrder',
+      payload: cardData,
+    });
+  }, []);
+
   return {
     boardsData: state,
     addCard,
     removeCard,
+    updateOrder,
   };
 };

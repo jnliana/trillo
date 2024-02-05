@@ -10,9 +10,11 @@ export const BoardContext = createContext({} as TBoardContextProps);
 export const BoardContextProvider = ({
   children,
 }: TBoardContextProviderProps) => {
-  const { boardsData, addCard, removeCard } = useBoardReducer();
+  const { boardsData, addCard, removeCard, updateOrder } = useBoardReducer();
   return (
-    <BoardContext.Provider value={{ boardsData, addCard, removeCard }}>
+    <BoardContext.Provider
+      value={{ boardsData, addCard, removeCard, updateOrder }}
+    >
       {children}
       <Outlet />
     </BoardContext.Provider>

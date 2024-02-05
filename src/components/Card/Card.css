@@ -2,6 +2,16 @@
   background: #eee;
   padding: 1rem;
   border-radius: 1rem;
+  position: relative;
+}
+
+.card-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  border: none;
+  padding: 2px;
+  background: transparent;
 }
 
 .header-card {
@@ -13,7 +23,7 @@
 .header-card span {
   padding: 5px 10px;
   font-size: 0.8rem;
-  background: green;
+  background: var(--main-bg-color);
   border-radius: 9px;
   color: white;
 }
